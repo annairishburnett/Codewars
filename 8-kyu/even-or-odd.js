@@ -16,13 +16,13 @@
 
 
 
-
+//create a function that takes in a number
 function evenOrOdd(number) {
-    if (number % 2 === 0) {
-      return "Even";
+    if (number % 2 === 0){//check if it is even 
+      return "Even";//if it is return "Even"
     }
     else {
-      return "Odd"
+      return "Odd"//if it's not return "Odd"
     }
 }
 
