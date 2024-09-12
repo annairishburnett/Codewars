@@ -12,13 +12,17 @@
 //MY SOLUTION:
 //Parameters, Return, Examples, Pseudo Code:
 
-//P:
+//P: You will be given an array a and a value x. All you need to do is check whether the provided array contains the value. a can contain numbers or strings. x can be either.
 //R: Return true if the array contains the value, false if not.
-//E:
+//E: No examples were given
 //P: Psuedo code -> see comments in solution
 
 
-
+function check(a, x) {
+    // your code here
+    let result = a.find((item) => item === x) //use .find to return x or undefined
+    return result === x ? true : false //if x was found in the array, return true, else false
+  }
 
 
 
