@@ -46,3 +46,7 @@ function check(a,x){
 
 const check = (a, x) =>
     a.some(val => val === x);
+
+
+//Comments: 
+//All the top answers used .includes() or .indexOf() instead of .find()
