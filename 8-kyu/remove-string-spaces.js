@@ -32,7 +32,7 @@ const noSpace = x => x.split(" ").join("");
 
 
 function noSpace(x){
-    return x.replace(/\s/g, '');
+    return x.replace(/\s/g, '');//g stands for global
 }
 
 function noSpace(x){return x.split(' ').join('')}
@@ -41,7 +41,7 @@ function noSpace(x) {
     return x.replaceAll(' ', '');
 }
 
-const noSpace = x => x.replace(/ /g, "");
+const noSpace = x => x.replace(/ /g, "");// / /g selects all spaces, then replaces them with no spaces
 
 
 function noSpace(x){
