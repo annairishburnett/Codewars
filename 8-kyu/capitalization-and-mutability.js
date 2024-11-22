@@ -29,18 +29,30 @@
 //P: Psuedo code -> see comments in solution
 
 
-
-
+//create a function that takes in a string
+const capitalizeWord = word => word[0].toUpperCase() + word.slice(1);//select first character in the string and convert to uppercase, add second half of string with concatenation
 
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+function capitalizeWord(word) {
+    return word[0].toUpperCase() + word.slice(1);
+}
+
+
+const capitalizeWord = (word) => word.replace(word.charAt(0), word.charAt(0).toUpperCase());
 
 
 
+const capitalizeWord = word => word[0].toUpperCase()+word.slice(1);
 
+
+
+function capitalizeWord(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
 
 
 
