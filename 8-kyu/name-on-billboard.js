@@ -20,14 +20,31 @@
 //Steps:
 //1 - create a function that takes in a string
 //2 - create a variable name "cost" by using let and set value equal to 0
-//3 - convert the string to an array using .split('')
+//3 - convert the string to an array using .split('') and assign it to a variable named arr
 //4 - use forEach, for of, or for loop to loop through each element in the array
 //5 - each time add 30 pounds to variable cost with cost += 30
 //6 - return the variable cost with template string so you can add the pound symbol
 //7 - call the function and console.log the result
 
 
+//1st SOLUTION ITERATION:
 
+const myName = "Hermione Granger";
+
+function billboardCost(str){
+    let cost = 0;
+
+    let arr = str.split('');
+
+    for(let character of str){
+        cost += 30;
+    };
+
+    return `£${cost}`;
+}
+
+console.log(billboardCost(myName));
+//Success! At least in VSCode, still need to check if it satisfies Codewars requirements
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
