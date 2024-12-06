@@ -70,7 +70,18 @@ console.log(billboard(myName, 40)); //£640
 //Failed - Codewars didn't want the pound symbol attached
 
 //3rd SOLUTION ITERATION
+function billboard(name, price = 30){
+    let cost = 0;
 
+    let arr = name.split('');
+
+    for(let character of name){
+        cost += price;
+    };
+
+    return cost;
+}
+//SUCCESS! 
 
 
 
