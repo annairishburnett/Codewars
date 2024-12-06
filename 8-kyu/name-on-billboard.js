@@ -87,7 +87,17 @@ function billboard(name, price = 30){
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//They used var instead of let and a for loop instead of a for of loop, otherwise the solution is the same
+function billboard(name, price = 30){
 
+var totalCost = 0;
+for(i=0; i<name.length; i++){
+    totalCost += price;
+} 
+
+return totalCost;
+
+}
 
 
 
