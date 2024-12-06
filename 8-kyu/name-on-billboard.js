@@ -29,22 +29,49 @@
 
 //1st SOLUTION ITERATION:
 
-const myName = "Hermione Granger";
+// const myName = "Hermione Granger";
 
-function billboardCost(str){
+function billboardCost(name){
     let cost = 0;
 
-    let arr = str.split('');
+    let arr = name.split('');
 
-    for(let character of str){
+    for(let character of name){
         cost += 30;
     };
 
     return `£${cost}`;
 }
 
-console.log(billboardCost(myName));
+console.log(billboardCost(myName));//£480
 //Success! At least in VSCode, still need to check if it satisfies Codewars requirements
+
+
+//Forgot to include the second parameter for price. 
+
+//2nd SOLUTION ITERATION
+
+
+const myName = "Hermione Granger";
+
+function billboard(name, price = 30){
+    let cost = 0;
+
+    let arr = name.split('');
+
+    for(let character of name){
+        cost += price;
+    };
+
+    return `£${cost}`;
+}
+
+console.log(billboard(myName, 40)); //£640
+//Failed - Codewars didn't want the pound symbol attached
+
+//3rd SOLUTION ITERATION
+
+
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
