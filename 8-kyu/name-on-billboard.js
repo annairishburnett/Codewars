@@ -101,8 +101,10 @@ return totalCost;
 
 
 
-
-
+//They used the reduce method instead of creating a totalCost variable and using a for or for of loop
+function billboard(name, price = 30) {
+  return name.split('').reduce((sum, letter) => sum + price, 0); 
+}
 
 
 
