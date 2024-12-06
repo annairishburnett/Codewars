@@ -17,7 +17,14 @@
 //E: You can not use multiplier "*" operator.
 //P: see steps below
 
-
+//Steps:
+//1 - create a function that takes in a string
+//2 - create a variable name "cost" by using let and set value equal to 0
+//3 - convert the string to an array using .split('')
+//4 - use forEach, for of, or for loop to loop through each element in the array
+//5 - each time add 30 pounds to variable cost with cost += 30
+//6 - return the variable cost with template string so you can add the pound symbol
+//7 - call the function and console.log the result
 
 
 
