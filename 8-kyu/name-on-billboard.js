@@ -108,10 +108,27 @@ function billboard(name, price = 30) {
 
 
 
+//They used an arrow function, the unary plus operator to convert a string into a number, and division. 
+const billboard = (name, price = 30) => +(name.length / (1 / price))
 
+// I don't understand the division part, so I'll have to look it up:
 
+        // Step 3: (1 / price)
 
+        // This calculates the reciprocal of the price.
+        // If price = 30, then 1 / 30 ≈ 0.0333.
 
+        // Step 4: Division name.length / (1 / price)
+
+        // This is the tricky part.
+
+        // Dividing by (1 / price) is the same as multiplying by price.
+
+        // So effectively:
+
+        // name.length / (1 / price) === name.length * price
+
+//Still confusing... And I am a programmer, not a mathematician, so that is okay :) 
 
 
 
