@@ -53,14 +53,34 @@ function contamination(text, char){
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Very creative! They returned the character the number of times the length of the string, rather than replacing the characters in the str with the given character
+function contamination(text, char){
+  return char.repeat(text.length)
+}
 
 
+//This was another option I considered (see pseudo code above)
+function contamination(text, char){
+  return text.replace(/./g, char);
+}
 
 
+//Arrow function version of the same thing
+const contamination = (s,v) => s.replace(/./g,v);
 
 
-
-
+//If/else statements to do the same thing
+function contamination(text, char) {
+  if (text.length === 0 || char.length === 0) {
+    return '';
+  } else {
+    let str = '';
+    for (let i = 0; i < text.length; i += 1) {
+      str += char;
+    }
+    return str;
+  }
+}
 
 
 
