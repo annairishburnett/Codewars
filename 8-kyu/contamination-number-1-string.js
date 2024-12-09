@@ -27,6 +27,18 @@
 //E: If the text or the character are empty, return an empty string.
 //P: see steps below
 
+//PSEUDO CODE:
+//1 - create a function that takes in a string and a character
+//2 - use str.replace('') method to replace all of the characters in the text with the character given
+//3 - use || '' to return an empty string
+//4 - return that value, call the function, pass in the arguments, and console.log the results
+
+
+
+
+
+//1st SOLUTION ITERATION:
+
 
 
 
