@@ -29,19 +29,25 @@
 
 //PSEUDO CODE:
 //1 - create a function that takes in a string and a character
-//2 - use str.replace('') method to replace all of the characters in the text with the character given
+//2 - use str.replaceAll('') method or .replace(/./g, '') to replace all of the characters in the text with the character given
 //3 - use || '' to return an empty string
 //4 - return that value, call the function, pass in the arguments, and console.log the results
 
-
-
-
-
 //1st SOLUTION ITERATION:
 
+function contamination(text, char){
+    return text.replace(/([^])/g, char) || "";
+}
 
+console.log(contamination("abc", "z")) //"zzz"
+//Works with VSCode, now to check if it satisfies codewars
+//Success! But also I don't need the || ""
 
+//2nd SOLUTION ITERATION:
 
+function contamination(text, char){
+    return text.replace(/([^])/g, char);
+}
 
 
 
