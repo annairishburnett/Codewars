@@ -11,15 +11,20 @@
 
 // Note: The character is a string of length 1 or an empty string.
 
-
+// Example:
+// text before = "abc"
+// character   = "z"
+// text after  = "zzz"
 
 //MY SOLUTION:
 //Parameters, Return, Examples, Edge Cases, Pseudo Code:
 
-//P: 
-//R: 
-//E: 
-//E:
+//P: Input will be a string of text and a character, which will be a string of one character or an empty string. 
+//R: Return the text string entirely converted to the input character, or an empty string if the text or the character are empty.
+//E: text before = "abc"
+    // character   = "z"
+    // text after  = "zzz"
+//E: If the text or the character are empty, return an empty string.
 //P: see steps below
 
 
