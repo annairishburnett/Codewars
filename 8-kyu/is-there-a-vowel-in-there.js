@@ -28,7 +28,28 @@
 
 //1st Iteration:
 
+let array = [100, 100, 116, 105, 117, 121];
 
+function isVowel(arr) {
+  const pairs = {
+    97: 'a',
+    101: 'e',
+    105: 'i',
+    111: 'o',
+    117: 'u'
+  };
+
+  return arr.map(num => {
+    // if num matches one of the vowel char codes, replace it
+    if (pairs[num]) {
+      return pairs[num];
+    }
+    // otherwise keep it as a number
+    return num;
+  });
+}
+
+console.log(isVowel(array));// → [100, 100, 116, "i", "u", 121]
 
 
 
