@@ -17,6 +17,16 @@
 //E: No edge cases are listed. Will there be any empty arrays? The assumption is no. 
 //P: see steps below
 
+//Pseudo Code:
+// 1 - create a function that takes in an array
+// 2 - create an object within that function using const = pairs with key value pairs that have the character codes for the lower case vowels as the key and their corresponding string as the value
+// 3 - use .map to loop through the array, with num as the parameter
+// 4 - use if statement to check if the object pairs has num with [] brackets, if yes, return pairs[num]
+// 5 - if no, return num
+// 6 - call the function, console.log the results
+
+
+//1st Iteration:
 
 
 
