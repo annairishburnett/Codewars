@@ -56,12 +56,26 @@ console.log(isVowel(array));// → [100, 100, 116, "i", "u", 121]
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Used a for loop, var instead of let or const to create the character from the code with String.fromCharCode, then checked to see if that character was a vowel with .indexOf !=== -1 (-1 is what indexOf returns if the element you're looking for doesn't exist), then if it's a vowel converts that element to its character, otherwise returns the number  
+function isVow(a){
+  for (var i=0, l=a.length; i<l; ++i)
+  {
+    var char = String.fromCharCode(a[i])
+    if ('aeiou'.indexOf(char) !== -1)
+    a[i] = char;
+  }
+  
+  return a;
+}
 
 
+//Ternary operator version of code above
+const isVow = a => a.map(x=>'aeiou'.includes(y=String.fromCharCode(x)) ? y : x)
 
 
-
-
+//My solution but separated into a separate object and an arrow function
+const v={"97":"a","101":"e","105":"i","111":"o","117":"u"}
+const isVow=a=>a.map(x=>v[x]||x)
 
 
 
