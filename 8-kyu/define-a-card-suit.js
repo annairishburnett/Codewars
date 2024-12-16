@@ -55,6 +55,150 @@ console.log(defineSuit(card));
 //Now try it with an object and key value pairs:
 
 
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').map(char => {
+    if(suits[char]){
+        return suits[char];
+    }
+    return 'invalid input'
+   })
+}
+//Returned: ['invalid input', 'clubs']
+//Returning something for the 3, don't need to do that
+//Returning answer in array format, which we don't want
+//Try this:
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').map(char => suits[char]);
+}
+//Returned: [undefined, 'clubs']
+//Didn't solve the issue
+//What about not splitting it into an array and doing .includes on the string with the suits?
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.includes(suits[card]);
+}
+//I don't think this will work
+//It did not, returned false
+//What about filter or reduce?
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').filter(char => suits[char]).join('');
+}
+//Getting closer, returned: '♣'
+//Need a ternary operator
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').filter(char => suits[char] ? suits[char] : 'invalid input').join('');
+}
+//Nope, returned: '3♣'
+//I clearly still don't understand how to access values in objects :/ 
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').filter(char => suits[char] ? suits['char'] : 'invalid input').join('');
+}
+//Returned: '3'
+//I'm surrounding it! Every answer but the one I want ;)
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').filter(char => suits[char] ? suits.char : 'invalid input').join('');
+}
+//Same as above, returned: '3'
+//Time to go Google/ask for help :) 
+
+
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').filter(char => suits[char]);
+}
+//Returns an array with the '♣' in it, so it couldn't look up it's value, I have to turn it back into a string
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   return card.split('').filter(char => suits[char.toString()]);
+}
+//Didn't change anything
+
+//So I started typing out my question and in the process had a realization:
+//My return is an array with the clubs symbol in it, I just need to add .join('') to turn it into a string of the symbol, then I can pass the string into the object 'suits' with square brackets to return the value I want
+//I just need to add an intermediary step with let result = then what I have above with card.split('') etc. 
+
+function defineSuit(card){
+   const suits = {
+        '♣': 'clubs',
+        '♦': 'diamonds',
+        '♥': 'hearts',
+        '♠': 'spades',
+   }
+
+   let result = card.split('').filter(char => suits[char]).join('');
+
+   return suits[result];
+}
+//Success! 
+//Check it with Codewars
+//It worked! Now to submit and see what other solutions people came up with :)
+
 
 
 
