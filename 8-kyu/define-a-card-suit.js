@@ -23,7 +23,13 @@
 //E: None provided, so we will assume none until we submit the solution and see if we get any errors.
 //P: see steps below
 
+//Pseudo Code:
 
+// 1 - create a function that takes in a string
+// 2 - use if else statements and .includes('♣') then return 'clubs', or an object with key value pairs ♣ : 'clubs'
+// 3 - do this for each suit
+// 4 - return the suit name
+// 5 - call the function, console.log the result
 
 
 
