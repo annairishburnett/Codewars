@@ -205,18 +205,49 @@ function defineSuit(card){
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//They used an object with key value pairs, too, but then passed in just the last character to look up the key/value. Very smart, you can just ignore all characters in the input except the last character to find the suit symbol
+function defineSuit(card) {
+  const s = {
+    "♣": "clubs",
+    "♠": "spades",
+    "♦": "diamonds",
+    "♥": "hearts"
+  }
+  return s[card.charAt(card.length - 1)]
+}
+
+
+//Another version of my first solution, but with all if statements instead of if/else statements:
+function defineSuit(card) {
+if(card.includes('♥')) return 'hearts'
+if(card.includes('♦')) return 'diamonds'
+if(card.includes('♣')) return 'clubs'
+if(card.includes('♠')) return 'spades' 
+}
 
 
 
+//Another variation on the first Codewars Community solution above, using .substr() instead of .charAt()
+function defineSuit(card) {
+  return {
+    '♣' : 'clubs',
+    '♦' : 'diamonds',
+    '♥' : 'hearts',
+    '♠' : 'spades'
+  }[card.substr(-1)]
+}
 
 
 
-
-
-
-
-
-
-
+//Switch case version
+function defineSuit(card) {
+  switch (card.slice(-1)){
+    case '♣': return 'clubs';
+    case '♦': return 'diamonds';
+    case '♥': return 'hearts';
+    case '♠': return 'spades';    
+  }
+    
+}
 
 
