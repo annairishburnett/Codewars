@@ -26,10 +26,33 @@
 //Pseudo Code:
 
 // 1 - create a function that takes in a string
-// 2 - use if else statements and .includes('♣') then return 'clubs', or an object with key value pairs ♣ : 'clubs'
+// 2 - use if else statements and .includes('♣') then return 'clubs', or an object with key value pairs ♣ : 'clubs', or you could use switch cases
 // 3 - do this for each suit
 // 4 - return the suit name
 // 5 - call the function, console.log the result
+
+//1st SOLUTION ITERATION:
+
+let card = "3♣";
+
+function defineSuit(card){
+    if(card.includes('♣')){
+        return 'clubs';
+    }else if(card.includes('♦')){
+        return 'diamonds';
+    }else if(card.includes('♥')){
+        return 'hearts';
+    }else if(card.includes('♠')){
+        return 'spades';
+    }else{
+        return 'invalid input';
+    }
+}
+
+console.log(defineSuit(card));
+//It worked in VSCode, now checking Codewars. 
+//Success! 
+//Now try it with an object and key value pairs:
 
 
 
