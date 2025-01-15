@@ -40,11 +40,17 @@ console.log(multipleOfIndex(array)); // [0, 2, 6]
 //OTHER TOP SOLUTIONS FROM CODEWARS USERS:
 
 function multipleOfIndex(array) {
-    return array.filter((x,i) => x == 0 || x % i === 0)
+    return array.filter((x,i) => x === 0 || x % i === 0)
 }
 
 
-function multipleOfIndex(array) {
-  return array.filter((x,i) => x === 0 || x % i === 0)
-}
+//Explanation for code above: 
+// This has two parts connected by the || (logical OR) operator. The condition is true if either part is true.
+
+// num === 0:
+// This explicitly allows num to be 0, regardless of the index.
+// Without this condition, the modulo operation with index would usually fail because division by zero is undefined. However, since 0 is a valid number we want to include, this check ensures it is kept in the result.
+// Index 0, num = 0:
+// num % index is undefined because division by 0 is not allowed. However, the second condition num === 0 is true, so this number is included.
+
 
