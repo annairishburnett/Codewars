@@ -21,6 +21,14 @@
 
 
 
+//Initial attempt at solution:
+// function multipleOfIndex(arr){
+//     return arr.filter((num, index) => num % index === 0 || null);
+// }
+//This didn't work because 0 was excluded from the resulting array -> [0,2,3,6,9] = [2,6]
+
+
+
 let array = [0,2,3,6,9];
 
 function multipleOfIndex(arr){
