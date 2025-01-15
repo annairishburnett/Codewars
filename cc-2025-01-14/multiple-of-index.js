@@ -11,6 +11,7 @@
 
 
 //MY SOLUTION:
+//Parameters, Return, Examples, Pseudo Code:
 
 //P: Is it always going to be integers? Are we going to be given any negative numbers or zero? An empty arr ever?
 //R: Return an array of elements which are multiples of their own index in the input array
