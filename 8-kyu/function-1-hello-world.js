@@ -11,22 +11,27 @@
 //MY SOLUTION:
 //Parameters, Return, Examples, Pseudo Code:
 
-//P:
-//R:
-//E:
+//P: Make a simple function called greet
+//R: returns the most-famous "hello world!"
+//E: 'Hello world!""
 //P: Psuedo code -> see comments in solution
 
 
-
-
+//create a function that returns hello world 
+//I made an arrow function with an underscore as the parameter to indicate that we aren't going to pass anything into the function
+const greet = _ => "hello world!"
 
 
 
 
 //OTHER TOP SOLUTIONS FROM CODEWARS USERS:
 
+const greet = () => "hello world!";
 
 
+function greet() {
+    return "hello world!";
+}
 
 
 
