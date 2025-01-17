@@ -15,8 +15,8 @@
 //MY SOLUTION:
 //Parameters, Return, Examples, Pseudo Code:
 
-//P:
-//R:
+//P: Create a function that takes in a number (integer)
+//R: a string
 //E: 123  --> "123"
 // 999  --> "999"
 // -100 --> "-100"
@@ -24,15 +24,39 @@
 
 
 
-
+function numberToString(num) {
+    // I used the String() constructor function
+    return String(num);
+}
 
 
 
 
 //OTHER TOP SOLUTIONS FROM CODEWARS USERS:
 
+function numberToString(num) {
+    return num.toString();
+}
 
 
+function numberToString(num) {
+    // Return a string of the number here!
+    return String(num);
+}
 
+function numberToString(num) {
+    return ''+num;
+}
 
+    function numberToString(num) {
+        return num + '';
+    }
 
+const numberToString = num => `${num}`;
+
+const numberToString = num => num.toString();
+
+function numberToString(num) {
+    // Return a string of the number here!
+    return `${num}`;
+}
