@@ -25,11 +25,13 @@
 //P: Psuedo code -> see comments in solution
 
 
-
+//create function that finds the max value
 var max = function(list){
-    let maxNum = list[0];
+    let maxNum = list[0];//create a variable maxNum and set it to element in the zeroth index
 
+    //loop through the array
     for(let i = 1; i < list.length; i++){
+        //compare each element to the first element, if the value is greater replace maxNum with that value
         if(maxNum < list[i]){
             maxNum = list[i]
         }
@@ -38,11 +40,13 @@ var max = function(list){
     return maxNum;
 }
 
-
+//create function that finds the min value
 var min = function(list){
-    let minNum = list[0];
+    let minNum = list[0];//create a variable minNum and set it to element in the zeroth index
     
+    //loop through the array
     for(let i = 1; i < list.length; i++){
+        //compare each element to the first element, if the value is lesser replace minNum with that value
         if(list[i] < minNum){
             minNum = list[i]
         }
