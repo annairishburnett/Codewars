@@ -65,14 +65,66 @@ function dnaStrand(dna){
 
 
 
-
 //OTHER TOP SOLUTIONS FROM CODEWARS USERS:
 
+function DNAStrand(dna) {
+    return dna.replace(/./g, function(c) {
+      return DNAStrand.pairs[c]
+    })
+}
+  
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
 
 
 
 
+var pairs = {'A':'T','T':'A','C':'G','G':'C'};
 
+function DNAStrand(dna){
+  return dna.split('').map(function(v){ return pairs[v] }).join('');
+}
+
+
+
+
+let pairs = {A:'T',T:'A',C:'G',G:'C'};
+const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
+
+
+
+function DNAStrand(dna) {
+    return dna.split('').map(function(v) {return {A:'T', T:'A', C:'G', G:'C'}[v];}).join('');
+}
+
+
+
+//using switch cases instead of conditional statements
+function DNAStrand(dna){
+    //your code here
+    var res="";
+    for(var i=0; i<dna.length; i++) {
+      switch(dna[i]) {
+        case 'A':
+          res += "T";
+          break;
+        case 'T':
+          res += "A";
+          break;
+        case 'G':
+          res += "C";
+          break;
+        case 'C':
+          res += "G";
+          break;
+      }
+    }
+    return res;
+}
 
 
 
