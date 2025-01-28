@@ -30,6 +30,36 @@
 
 
 //1st Iteration
+//create a function that takes in a string
+let dnaString = "ATTGC";
+function complementaryDNA(dna){
+    return dna.replace(/A/gi, 'T').replace(/T/gi, 'A').replace(/C/gi, 'G').replace(/G/gi, 'C');
+}
+//Doesn't work, returns: AAACC
+//The last two .replace() methods copy over the first two. Can you chain them within the parenthesis?
+
+
+//2nd Iteration
+//create a function that takes in a string
+function dnaStrand(dna){
+    const arr = dna.split('');//turn the string into an array
+    let complement = [];//create an empty array you can push data into
+
+    //loop through the array and switch each letter for its complement and push it into the new array
+    for(let symbol of arr){
+        if(symbol === 'A'){
+            complement.push('T');
+        }else if(symbol === 'T'){
+            complement.push('A');
+        }else if(symbol === 'C'){
+            complement.push('G');
+        }else if(symbol === 'G'){
+            complement.push('C');
+        }
+    }
+    return complement.join('');//convert the new array into a string and return it
+}
+//This solution works, but it's long and not very elegant. 
 
 
 
