@@ -66,15 +66,15 @@ function maskify(str){
 //OTHER TOP SOLUTIONS FROM CODEWARS USERS:
 
 
-//Ahh, yeah, slice makes more sense hehe
+//Ahh, yeah, slice makes more sense
 function maskify(cc) {
-    return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+    return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);//1st slice takes all the characters from zero until -4 (exclusive) and replactes them with #, then on the end adds the last 4 characters
 }
 
 
 
 function maskify(cc) {
-    return cc.slice(-4).padStart(cc.length,'#')
+    return cc.slice(-4).padStart(cc.length,'#')//slice(-4) extracts the last 4 characters from the string, then padStart(cc.length,'#') pads the string on the left with "#"" until it reaches cc.length
 }
 
 
