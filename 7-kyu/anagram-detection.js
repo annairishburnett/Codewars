@@ -38,6 +38,7 @@ function detectAnagram(str1, str2){
 //Didn't work, returned false. Match method not working properly or how I expect it to - look up on MDN.
 
 
+
 //2nd Iteration
 //Try using sort to get all of the letters in the same order, then compare them with .includes() or ===
 function detectAnagram(str1, str2){
@@ -47,12 +48,14 @@ function detectAnagram(str1, str2){
 //Right... I forgot to turn the string into an array first. Try again with that update :)
 
 
+
 //3rd Iteration
 function detectAnagram(str1, str2){
     return str1.split('').sort((a,b)=>a-b).toLowerCase() === str2.split('').sort((a,b)=>a-b).toLowerCase() || false;
 }
 //Error: str1.split(...).sort(...).toLowerCase is not a function at detectAnagram
 //Right... .toLowerCase() is a string method, not an array method. Put it on str before you split it into an array.
+
 
 
 //4th Iteration
@@ -84,6 +87,7 @@ function detectAnagram(str1, str2){
         //Try 4th iteration again with (a,b)=>a-b removed
 
 
+
 //5th Iteration
 function detectAnagram(str1, str2){
     return str1.toLowerCase().split('').sort() === str2.toLowerCase().split('').sort() || false;
@@ -91,22 +95,60 @@ function detectAnagram(str1, str2){
 //Still returns false when it should be true
 //I need to join them back together before comparing them so I'm comparing strings, not arrays, you can't compare arrays with ===
 
+
+
 //6th Iteration
 function detectAnagram(str1, str2){
     return str1.toLowerCase().split('').sort().join('') === str2.toLowerCase().split('').sort().join('') || false;
 }
 //Success! There is probably a less WET solution for this, we'll see what the other Codewars users came up with and learn from them :)
+//Updated to Codewars parameters:
+    var isAnagram = function(test, original){
+        return test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('') || false;
+    }
+    //Passed Codewars tests
 
 
 
 
-//OTHER TOP SOLUTIONS FROM CODEWARS USERS:
+
+//TOP SOLUTIONS FROM CODEWARS USERS:
+
+// same logic as my solution, different format
+var isAnagram = function(test, original) {
+    var t = test.toLowerCase().split('').sort().join('');
+    var o = original.toLowerCase().split('').sort().join('');
+    return (t==o)?true:false;
+};
+
+
+//same as my solution
+function isAnagram (test, original) {
+	return test.toLowerCase().split("").sort().join("") === original.toLowerCase().split("").sort().join("");
+}
+
+
+//created a string prototype to sort the letters and then used that in their function
+//definitely a cleaner answer, splitting up the functions of sorting the letters and comparing the strings into two different functions
+String.prototype.sortLetters = function() {
+    return this.toLowerCase().split('').sort().join('');
+}
+  
+var isAnagram = function(test, original) {
+  return test.sortLetters() == original.sortLetters();
+};
 
 
 
 
+//same idea as answer above, but used two functions instead of a string prototype and a function
+function isAnagram(str1, str2){
+    return sortWord(str1) == sortWord(str2);
+}
 
-
+function sortWord(word){
+    return word.toLowerCase().split("").sort().join("");
+}
 
 
 
