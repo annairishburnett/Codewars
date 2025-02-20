@@ -58,12 +58,20 @@ console.log(sortGiftCode(code)); //"abcdefghijklmnopqrstuvwxyz"
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+function sortGiftCode(code){
+    return code.split('').sort().join('');
+}
 
 
+function sortGiftCode(code){
+    return [...code].sort().join``
+}
 
 
+const sortGiftCode = code => code.split('').sort().join('');
 
 
+const sortGiftCode = (code) => [...code].sort().join('');
 
 
 
