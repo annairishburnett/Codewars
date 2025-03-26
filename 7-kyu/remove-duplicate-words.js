@@ -82,13 +82,10 @@ console.log(removeDuplicateWords(string));
 
 //Okay, so new Set does work, just not the way I was trying to use it. Good to know!
 //Look up how this works :-)
-
-
 const removeDuplicateWords = s => [...new Set(s.split(' '))].join(' ')
 
 
 //Okay, this one makes sense!
-
 const removeDuplicateWords = s => {
     const set = new Set(s.split(' '));
     return Array.from(set).join(' ');
