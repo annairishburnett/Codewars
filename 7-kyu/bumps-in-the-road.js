@@ -86,11 +86,18 @@ function bump(x){
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Very similar to my solution, but used .split('n') instead which would create an array one longer than the number of the delimiter "n", so therefore the .length > 15 had to increase to .length > 16
+const bump=x=>x.split('n').length>16?"Car Dead":"Woohoo!"
 
 
+//I thought about trying to use .match in my solution, and this makes sense to me -> x.match(/n/g) would select every instance of the "n" character, then if there is no "n" it would use || comparison logic for non-bolean values and (null || []) would evaluate to [] because null is falsy, then the rest of the expression is the same as mine
+function bump(x){
+    return (x.match(/n/g) || []).length > 15 ? "Car Dead" : "Woohoo!";
+}
 
 
-
+//Another interesting way to use .split, I haven't seen it without the () before - not sure I like that, it's not as clean and is harder to read maybe? I wonder if there's ever a benefit to doing it that way
+const bump = x => x.split``.filter(e => e === 'n').length > 15 ? 'Car Dead' : 'Woohoo!';
 
 
 
