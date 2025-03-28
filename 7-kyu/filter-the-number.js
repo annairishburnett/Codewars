@@ -83,7 +83,28 @@ function filterString(value){
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//I don't understand how this works, specifically the /\D/ regex
+var filterString = function(value) {
+    return +value.replace(/\D/g, '')
+}
 
+
+//Similar concept to mine except they used .filter instead of .match
+const filterString = (v) => +[...v].filter(el => '0123456789'.includes(el)).join('')
+
+
+//this one uses string concatenation with a loop to add nums to a new variable, then converts the resulting string into a number 
+var filterString = function(value) {
+    let result = '';
+    for (let i of value){
+      if (!isNaN(Number(i))) result += i;
+    }
+    return Number(result);
+  }
+
+
+//turns the string into an array with square brackets and the spreading, then .filter to sort out isNaN characters, then .join surrounded by Number() like I did
+const filterString = value => Number([...value].filter(char => !isNaN(char)).join(""));
 
 
 
