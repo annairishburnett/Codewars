@@ -61,7 +61,7 @@ function filterString(value){
         }
         //It's a string before I add .map(Number) as expected, and still a string after I add .map(Number)
         //Because .join('') turns it back into a string, it doesn't just combine the numbers into one number
-            //I could wrap the while thing in Number() 
+            //I could wrap the whole thing in Number() 
 
             function filterString(value){
                 const result = Number(value.match(/[0123456789]/g).join(''));
