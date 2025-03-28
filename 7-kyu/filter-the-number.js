@@ -100,7 +100,7 @@ var filterString = function(value) {
       if (!isNaN(Number(i))) result += i;
     }
     return Number(result);
-  }
+}
 
 
 //turns the string into an array with square brackets and the spreading, then .filter to sort out isNaN characters, then .join surrounded by Number() like I did
