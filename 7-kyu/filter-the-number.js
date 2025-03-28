@@ -29,7 +29,54 @@
 // 3 - return the result and call the function
 
 
+//1ST ITERATION
 
+const string = "He11o th3r3 y0u!";
+
+function returnNums(str){
+    return str.match(/[0123456789]/g);
+}
+
+console.log(returnNums(string));
+//returns an array of the numbers: ['1', '1', '3', '3', '0']
+//directions don't say if the return should be an array or a string, but seems like maybe the implication is in string form
+//so add .join('') to the end to get a string and try it on Codewars
+
+
+//2ND ITERATION
+
+function filterString(value){
+    return value.match(/[0123456789]/g).join('');
+}
+//Got an error code on Codewars: For the input "123": expected '123' to equal 123
+//Is the problem that I'm returning a string of numbers instead of a number?
+    //Added .map(Number) before .join('') and that didn't help
+    //Check what type of variable I'm creating with my function above:
+
+        function filterString(value){
+            const result = value.match(/[0123456789]/g).map(Number).join('');
+        
+            console.log(typeof result);
+            return result;
+        }
+        //It's a string before I add .map(Number) as expected, and still a string after I add .map(Number)
+        //Because .join('') turns it back into a string, it doesn't just combine the numbers into one number
+            //I could wrap the while thing in Number() 
+
+            function filterString(value){
+                const result = Number(value.match(/[0123456789]/g).join(''));
+            
+                console.log(typeof result);
+                return result;
+            }
+            //That worked! Try it again on Codewars 
+            //Success!
+
+            
+//FINAL SUBMITTED SOLUTION:
+function filterString(value){
+    return Number(value.match(/[0123456789]/g).join(''));
+}
 
 
 
