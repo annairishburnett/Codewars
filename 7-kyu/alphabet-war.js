@@ -396,37 +396,14 @@ function alphabetWar(fight){
 }
 
 alphabetWar.pairs = {
-    //left side letters and their power:
     w: 4,
     p: 3,
     b: 2,
     s: 1,
-
-    //right side letters and their power:
     m: 4,
     q: 3,
     d: 2,
     z: 1,
-
-    //other letters don't have power and are only victims:
-    a: 0,
-    c: 0,
-    e: 0,
-    f: 0,
-    g: 0,
-    h: 0,
-    i: 0,
-    j: 0,
-    k: 0,
-    l: 0,
-    n: 0,
-    o: 0,
-    r: 0,
-    t: 0,
-    u: 0,
-    v: 0,
-    x: 0,
-    y: 0,
 };
 
 //I'm sure there's a way to refactor this and make it dryer, and I already spent a lot of time solving it so we'll see what other people did to solve it :-) 
