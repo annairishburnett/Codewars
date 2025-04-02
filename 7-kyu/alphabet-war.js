@@ -440,8 +440,104 @@ alphabetWar.pairs = {
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Wow, way cleaner
+//so they created an object within the function and set left side vals to negative nums and right side vals to positive nums
+//then they created a variable result and used .split('') and .reduce like I did, but skipped .match() and .replace() and used the key value pair map[val] to switch the letters to their values
+//then they used the binary of pos or neg to determine who won
+function alphabetWar(fight) {
+    let map = { w: -4, p: -3, b: -2, s: -1, m: 4, q: 3, d: 2, z: 1 };
+    let result = fight.split('').reduce((a, b) => a + (map[b] || 0), 0);
+    return result ? (result < 0 ? "Left" : "Right") + " side wins!" : "Let's fight again!";
+}
 
 
+
+
+//Not quite sure how this one works
+function alphabetWar(fight){
+    var right = {}
+    right['m'] = 4
+    right['q'] = 3
+    right['d'] = 2
+    right['z'] = 1
+    var left = {}
+    left['w'] = 4
+    left['p'] = 3
+    left['b'] = 2
+    left['s'] = 1
+  
+    var sumRight = 0
+    var sumLeft = 0
+  
+    for(i in fight){
+      if(right[fight[i]]){sumRight += right[fight[i]]}
+      if(left[fight[i]]){sumLeft += left[fight[i]]}
+    }
+    if(sumRight>sumLeft){return 'Right side wins!'}
+    if(sumRight<sumLeft){return 'Left side wins!'}
+    return "Let's fight again!";
+}
+
+
+
+
+
+//This one is pretty straightforward! I like the use of switch cases and for of here
+function alphabetWar(fight) {
+    let score = 0;
+    for (const letter of fight) {
+        switch (letter) {
+            case 'w': score -= 4; break;
+            case 'p': score -= 3; break;
+            case 'b': score -= 2; break;
+            case 's': score -= 1; break;
+            case 'm': score += 4; break;
+            case 'q': score += 3; break;
+            case 'd': score += 2; break;
+            case 'z': score += 1; break;
+        }
+    }
+
+    return score < 0 ? "Left side wins!" : score > 0 ? "Right side wins!" : "Let's fight again!";
+}
+
+
+
+
+
+
+
+
+function alphabetWar(fight) {
+    let left = 0;
+    let right = 0;
+
+    for (i = 0; i < fight.length; i++) {
+        (fight[i] === 'w')
+        ? left += 4
+        : (fight[i] === 'p')
+        ? left += 3
+        : (fight[i] === 'b')
+        ? left += 2
+        : (fight[i] === 's')
+        ? left += 1
+        : (fight[i] === 'm')
+        ? right += 4
+        : (fight[i] === 'q')
+        ? right += 3
+        : (fight[i] === 'd')
+        ? right += 2
+        : (fight[i] === 'z')
+        ? right += 1
+        : left += 0;
+    }
+    return (left > right) 
+      ? `Left side wins!`
+      : (left < right)
+      ? `Right side wins!`
+      : `Let's fight again!`
+
+}
 
 
 
