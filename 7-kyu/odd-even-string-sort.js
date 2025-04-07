@@ -65,8 +65,36 @@ console.log(sortMyString(string));
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Ahhh, it makes sense to use .filter instead of .reduce() -> same concept as my answer but DRYER. Used concatenation instead of template strings. 
+const sortMyString = s => {
+    let even = s.split('').filter((v, i) => i % 2 === 0).join('')
+    let odd = s.split('').filter((v, i) => i % 2 !== 0).join('')
+    return even + ' ' + odd
+}
 
 
+//Used a for loop, created a string, and used string concatentation with += to add characters to the string
+function sortMyString(S) {
+    let strEven = ''
+    let strOdd = ''
+    for (let i = 0; i < S.length; i++) {
+      if (i % 2 === 0) {
+        strEven += S[i]
+      }
+      else {
+        strOdd += S[i]
+      }
+    }
+    return strEven + ' ' + strOdd
+  }
+
+
+//Similar concept to my answer, but used let and created empty arrays and then pushed characters into the correct variable based on it having and even or odd index, then put .join('') to turn the arrays back into strings within the template string. 
+function sortMyString(S) {
+    let even = [], odd = [];
+    S.split('').forEach((e, i) => { i % 2 === 0 ? even.push(e) : odd.push(e) })
+    return `${even.join('')} ${odd.join('')}`;
+}
 
 
 
