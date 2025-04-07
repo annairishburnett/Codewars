@@ -30,11 +30,33 @@
 //P: Psuedo code -> see comments in solution
 
 // 1 - create a function that takes in a string
-// 2 - create two conts, even and odd, and set them equal to s.reduce(), the first reducing for only even characters and the second for only odd characters
-// 3 - return with tick marks ${even} with a space then ${odd}, which will give us a string of the sorted characters with a space in the middle
-// 4 - call the function
+// 2 - create two conts, even and odd, and set them equal to s.split('') to create an array, then .reduce(), the first reducing for only even characters and the second for only odd characters
+        //use if conditional, if index % 2 === 0, then add character to the result
+// 3 - add .join('') at then end of .reduce to turn the array back into a string
+// 4 - return with tick marks ${even} with a space then ${odd}, which will give us a string of the sorted characters with a space in the middle
+// 5 - call the function
 
 //1ST ITERATION
+let string = "CodeWars";
+
+function sortMyString(s){
+        const evens = s.split('').reduce((result, char, index) => {
+                if(index % 2 === 0) result.push(char);
+                return result;
+        },[]).join('');
+
+        const odds = s.split('').reduce((result, char, index) => {
+                if(index % 2 !== 0) result.push(char);
+                return result;
+        },[]).join('');
+
+        return `${evens} ${odds}`;
+}
+
+console.log(sortMyString(string));
+//First try!!! Worked in VSCode, now to check in Codewars.
+//Worked in Codewars, too!
+
 
 
 
