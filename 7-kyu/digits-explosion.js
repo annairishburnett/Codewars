@@ -46,14 +46,62 @@ console.log(explode(string));
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Same as my solution, but they added the + operator to turn the string into a number in the .repeat() method, which is a good idea, basically the same as my idea to use Number() but more concise
+function explode(s) {
+    return s.split("").map((e) => e.repeat(+e)).join("");
+}
+
+
+//Used a regex with .replace instead of .map -> I don't understand that regex, look up later
+const explode = s => s.replace(/\d/g, d => d.repeat(d));
 
 
 
+//Used a for loop and a new string with concatenation
+function explode(s) {
+    let newStr = "";
+    for (let i = 0; i < s.length; i++) {
+      for (let num = s[i]; num > 0; num--) {
+        newStr += s[i]
+      }
+    }
+    return newStr
+}
 
 
 
+//Used the spreader [...] instead of .split(''), otherwise the same
+explode=s=>[...s].map(n=>n.repeat(n)).join``
 
 
+
+//Very WET code, used if/else conditional and created a new array, adding numbers with .push, then .join('') to convert back into a string,create variable "split" and then didn't use it
+function explode(s) {
+    let arr = [];
+    let split = s.split("");
+    for (let item of s) {
+      if (item == "1") {
+        arr.push("1");
+      } else if (item == "2") {
+        arr.push("22");
+      } else if (item == "3") {
+        arr.push("333");
+      } else if (item == "4") {
+        arr.push("4444");
+      } else if (item == "5") {
+        arr.push("55555");
+      } else if (item == "6") {
+        arr.push("666666");
+      } else if (item == "7") {
+        arr.push("7777777");
+      } else if (item == "8") {
+        arr.push("88888888");
+      } else if (item == "9") {
+        arr.push("999999999");
+      }
+    }
+    return arr.join("");
+  }
 
 
 
