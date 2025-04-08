@@ -24,17 +24,26 @@
 // 1 - create a function that takes in a string
 // 2 - use .split('') to turn the string into an array (nums will still be strings)
 // 3 - use .map(num => num.repeat(num) -> not sure if that works because they are still strings, JS might auto convert them, or might have to convert the string into a number: num.repeat(Number(num)), try without first
+        //JS auto converted the string into a number
 // 4 - use .join('') to convert array back into a string
 // 5 - return the value and call the function
 
 
+//1ST ITERATION
+let string = "312";
 
+function explode(s){
+    return s.split('').map(num => num.repeat(num)).join('');
+}
+
+console.log(explode(string));
+//First try!!! Worked on VSCode, now to try with Codewars.
+//Worked!
 
 
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
-
 
 
 
