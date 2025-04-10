@@ -68,25 +68,35 @@ function switcheroo(str){
 }
 //returned: "bbabcabb", should be: "bbabcabb"
 //Success on VSCode! Now time to try it on Codewars
+//It worked!
 
 
-
+//FINAL SOLUTION
+function switcheroo(x){
+    return x.split('').map(char => char === "c" ? "c" : (char === "a" ? "b" : "a")).join('');
+}
 
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//So you can use .replace, but with a ternary operator as the value you're replacing the character with. So clever! :-)
+const switcheroo = x => x.replace(/[ab]/g, x => x === "a" ? "b" : "a")
 
 
 
+//They used .map with a function inside of it and if statements, with .join at the end to turn the array back into a string -> I bet you could use a similar method with .reduce
+function switcheroo(x){
+    return x.split('').map(function(e){
+      if (e =='b')return 'a';
+      if (e == 'a') return 'b';
+      if(e=='c') return 'c'
+    }).join('');
+}
 
 
-
-
-
-
-
-
+//Same concept as my answer, but with "a" as the initial letter instead of "c"
+const switcheroo = x => x.split('').map(letter => letter === 'a' ? 'b' : (letter === 'b' ? 'a' : 'c')).join('');
 
 
 
