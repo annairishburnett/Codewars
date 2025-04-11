@@ -23,8 +23,23 @@
 //E: Note that you can receive floats as well
 //P: Psuedo code -> see comments in solution
 
+// 1 - create a function that takes in an array
+// 2 - use .map(Number), but I don't know if that works with floated values
+// 3 - return the array and call the function
 
+//1ST ITERATION
 
+let array = ["1.2", "2.3", "3.4"];
+
+function toNumberArray(stringarray){
+        return stringarray.map(Number);
+}
+
+console.log(toNumberArray(array)); // [1.2, 2.3, 3.4]
+//Worked with integers, test with floated values
+//Worked with floated values, too
+//Check on Codewars - yep, it worked! 
+//This one felt very easy, maybe time to start doing some 6 kyu? :-)
 
 
 
