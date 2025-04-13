@@ -50,7 +50,30 @@
 // 5 - return the value and call the function
 
 
+//1ST ITERATION
+let list1 = [
+    { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+    { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+    { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+    { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' },
+    { firstName: 'Evi', lastName: 'V.', country: 'Belgium', continent: 'Europe', age: 35, language: 'JavaScript' }
+];
 
+
+function coundDevelopers(list){
+    let euroJSDevs = 0;
+
+    for(let dev of list){
+            if((dev.continent === 'Europe') && (dev.language === 'JavaScript')){
+                    euroJSDevs++;
+            }
+    }
+
+    return euroJSDevs;
+}
+
+console.log(coundDevelopers(list1));
+//First trrryyyy! :-) On VSCode anyway, check it on Codewars.
 
 
 
