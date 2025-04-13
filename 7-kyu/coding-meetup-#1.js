@@ -74,8 +74,7 @@ function coundDevelopers(list){
 
 console.log(coundDevelopers(list1));
 //First trrryyyy! :-) On VSCode anyway, check it on Codewars.
-
-
+//Success!
 
 
 
@@ -83,18 +82,41 @@ console.log(coundDevelopers(list1));
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Ahh, filter with .length makes sense for drier code 
+function countDevelopers(list) {
+    return list.filter(x=>x.continent=='Europe'&&x.language=='JavaScript').length
+  }
+
+
+//Used filter twice instead of using &&, but otherwise same as above
+function countDevelopers(list) {
+    return list
+      .filter(dev => dev.language === "JavaScript")
+      .filter(dev => dev.continent === "Europe")
+      .length
+  }
+
+
+//Used reduce with a count instead of a separate variable, otherwise pretty much the same
+  function countDevelopers(list) {
+    return list.reduce((count, dev) => 
+      (dev.continent === 'Europe' && dev.language === 'JavaScript')
+        ? count + 1 : count
+      , 0);
+  }
 
 
 
-
-
-
-
-
-
-
-
-
+//Like my answer, but with a regular for loop instead of a for of loop
+  function countDevelopers(list) {
+    x=0;
+  for(i=0;i<list.length;i++){
+      if(((list[i].continent)==='Europe')&&((list[i].language)==="JavaScript")){
+          x+=1
+      }
+  }
+      return x
+  }
 
 
 
