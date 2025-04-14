@@ -120,7 +120,8 @@ function likes(names) {
      return sentence;
 }
 
-console.log(likes(array3));// 
+console.log(likes(array3));// "Evi, Lea and 2 others like this"
+
 //It works on VSCode! Try it out on Codewars
 //It works! I think I panicked and checked what was wrong on ChatGPT because I thought a 6-kyu kata would be much harder/more complex, but the answer doesn't include anything new, or anything that tricky
 //Stay calm and think through the simplest ways of doing things and you'll be fine :) 
@@ -131,14 +132,68 @@ console.log(likes(array3));//
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Used switch cases instead of if/else. Not sure why they have the names || [] here, if the array is empty it should be [] anyway??? 
+        //names = names || []; means:
+        //"If names is falsy (e.g., undefined, null, or false), then set it to an empty array []."
+        //So it's basically a default fallback, ensuring that names is always a valid array before the function continues.
+
+//Would prefer this solution with template strings, it's a bit cleaner with the spaces 
+function likes(names){
+    names = names || [];
+    switch(names.length){
+      case 0: return 'no one likes this'; break;
+      case 1: return names[0] + ' likes this'; break;
+      case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
+      case 3: return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'; break;
+      default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this';
+    }
+}
+
+
+
+//Created an object with key value pairs and template strings. Then to select the key value pair they used Math.min which selects whichever number is smaller, 4 or names.length. This is a nice, clean option. 
+function likes(names){
+  return {
+    0: 'no one likes this',
+    1: `${names[0]} likes this`, 
+    2: `${names[0]} and ${names[1]} like this`, 
+    3: `${names[0]}, ${names[1]} and ${names[2]} like this`, 
+    4: `${names[0]}, ${names[1]} and ${names.length - 2} others like this`, 
+  }[Math.min(4, names.length)]
+}
 
 
 
 
+//Interesting, and too WET/complicated
+function likes (names) {
+    var templates = [
+      'no one likes this',
+      '{name} likes this',
+      '{name} and {name} like this',
+      '{name}, {name} and {name} like this',
+      '{name}, {name} and {n} others like this'
+    ];
+    var idx = Math.min(names.length, 4);
+    
+    return templates[idx].replace(/{name}|{n}/g, function (val) {
+      return val === '{name}' ? names.shift() : names.length;
+    });
+}
 
 
 
 
+//Basically the same as my solution, but with all if statements instead of if/else conditionals. I wonder why they did that?
+        //Each if block uses a return, which immediately ends the function. Because of that, there's no need for else or else if — the function will never reach the next condition once it returns.
+        //So it’s purely a style choice - if/else gets you the same results.  
+function likes(names) {
+    if(names.length === 0) return "no one likes this";
+    if(names.length === 1) return names[0] + " likes this";
+    if(names.length === 2) return names[0] + " and " + names[1] + " like this";
+    if(names.length === 3) return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+    return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
+}
 
 
 
