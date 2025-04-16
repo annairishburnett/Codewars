@@ -81,6 +81,11 @@ function createPhoneNumber(numbers){
 }
 
 
+//DRIER version of the first example with reduce instead of the for loop
+function createPhoneNumber(numbers){
+    return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
+ }
+
 
 //They turned the numbers array into a string, then used .substring (where I used .slice()) to select the numbers, then used concatenation to complete the number with the correct format (parenthesis, space, and dash).
 function createPhoneNumber(numbers){
@@ -100,12 +105,6 @@ function createPhoneNumber(numbers){
     return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
 }
 
-
-
-//DRIER version of the first example with reduce instead of the for loop
-function createPhoneNumber(numbers){
-    return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
- }
 
 
 //Not sure how this one works - it's a regex I don't understand. Look it up later!
