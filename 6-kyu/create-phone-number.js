@@ -68,17 +68,49 @@ console.log(createPhoneNumber2(cellNum3));
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//They created a variable with a number format as the value, then used a for loop and replaced the "x's" with the numbers from the array one by one. Very clever! 
+function createPhoneNumber(numbers){
+    var format = "(xxx) xxx-xxxx";
+    
+    for(var i = 0; i < numbers.length; i++)
+    {
+      format = format.replace('x', numbers[i]);
+    }
+    
+    return format;
+}
+
+
+
+//They turned the numbers array into a string, then used .substring (where I used .slice()) to select the numbers, then used concatenation to complete the number with the correct format (parenthesis, space, and dash).
+function createPhoneNumber(numbers){
+    numbers = numbers.join('');
+    return '(' + numbers.substring(0, 3) + ') ' 
+        + numbers.substring(3, 6) 
+        + '-' 
+        + numbers.substring(6);
+}
 
 
 
 
+//Another version using .replace and passing the array in with the spreader operator, not sure what the (.*) does, or the last part: '($1) $2-$3'. Look it up later!
+
+function createPhoneNumber(numbers){
+    return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+}
 
 
 
+//DRIER version of the first example with reduce instead of the for loop
+function createPhoneNumber(numbers){
+    return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
+ }
 
 
-
-
+//Not sure how this one works - it's a regex I don't understand. Look it up later!
+function createPhoneNumber(numbers){
+    return numbers.join('').replace(/(\d{3})(\d{3})(\d{4})/,'($1) $2-$3');
 
 
 
