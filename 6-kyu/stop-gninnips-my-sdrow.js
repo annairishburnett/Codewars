@@ -33,28 +33,39 @@
 //1ST ITERATION
 let string = "Hey fellow warriors";
 
-function spinWords(str){
-        return str.split(' ').map(word => word.length >= 5 ? word.split('').reverse().join('') : word).join(' ');
+function spinWords(string){
+        return string.split(' ').map(word => word.length >= 5 ? word.split('').reverse().join('') : word).join(' ');
 }
 
 console.log(spinWords(string));//"Hey wollef sroirraw"
 //Firrssttt trrryyyy! Thinking through things with pseudo code is gettinge easier, and it's helping me not miss important steps like using .split() to convert a string into an array before applying array methods, or .join() to turn an array back into a string. Yay progress!
+//Check if it works on Codewars. It does! Nice work self!
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Basically the same as my response, but used a function inside of .map() instead of a ternary operator
+function spinWords(words){
+    return words.split(' ').map(function (word) {
+      return (word.length > 4) ? word.split('').reverse().join('') : word;
+    }).join(' ');
+}
+
+
+
+//Interesting! They used .replace() and a regex with curly braces, then a function that reverses the words with 5 characters or more the same way I did it. You really need to look up how more regex variations work
+function spinWords(string){
+    return string.replace(/\w{5,}/g, function(w) { return w.split('').reverse().join('') })
+}
 
 
 
 
-
-
-
-
-
-
-
+//Same as my answer, just slightly different conditional before the ternary operator
+function spinWords(str){
+    return str.split(' ').map( w => w.length<5 ? w : w.split('').reverse().join('') ).join(' ');
+}
 
 
 
