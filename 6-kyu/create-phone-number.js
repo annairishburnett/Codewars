@@ -110,7 +110,7 @@ function createPhoneNumber(numbers){
 //Not sure how this one works - it's a regex I don't understand. Look it up later!
 function createPhoneNumber(numbers){
     return numbers.join('').replace(/(\d{3})(\d{3})(\d{4})/,'($1) $2-$3');
-
+}
 
 
 
