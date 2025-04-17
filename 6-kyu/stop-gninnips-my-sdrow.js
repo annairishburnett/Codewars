@@ -30,8 +30,15 @@
 // 6 - then make sure you turn the array back into a string with .join(' ')
 // 7 - return the value and call the function
 
+//1ST ITERATION
+let string = "Hey fellow warriors";
 
+function spinWords(str){
+        return str.split(' ').map(word => word.length >= 5 ? word.split('').reverse().join('') : word).join(' ');
+}
 
+console.log(spinWords(string));//"Hey wollef sroirraw"
+//Firrssttt trrryyyy! Thinking through things with pseudo code is gettinge easier, and it's helping me not miss important steps like using .split() to convert a string into an array before applying array methods, or .join() to turn an array back into a string. Yay progress!
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
