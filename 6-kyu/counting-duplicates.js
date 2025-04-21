@@ -45,6 +45,38 @@
 
 
 //1ST ITERATION
+let string = "aabBcde";
+
+function countDuplicates(str){
+        let uniqueChars = [...new Set(str.toLowerCase().split(''))];
+
+        return `${uniqueChars.length} # `
+        return uniqueChars;
+        let characters = {...uniqueChars};
+
+        return characters;
+
+}
+
+console.log(countDuplicates(string));// returned: "5 #" -> wanted: 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+//What about using brackets to evaluate key at run time? 
+//Or can you get the element out of the array and use that element to count instances in the other array and add that all to the return string at the same time?
+//OOOHHH! We're looking for duplicates, not unique characters, got to start over with the pseudo code because you were trying to do the wrong thing (-: 
+
+
+// 1 - create a function that takes in a string
+// 2 - 
+
+
+//2ND ITERATIONlet string = "aabBcde";
+let string1 = "aabBcde";
+
+function countDuplicates1(str){
+        
+
+}
+
+console.log(countDuplicates1(string1));// 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
 
 
 
