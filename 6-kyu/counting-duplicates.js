@@ -65,18 +65,58 @@ console.log(countDuplicates(string));// returned: "5 #" -> wanted: 2 # 'a' occur
 
 
 // 1 - create a function that takes in a string
-// 2 - 
+// 2 - could use a loop and .includes to find duplicates, has to include the character
 
-
-//2ND ITERATIONlet string = "aabBcde";
+//2ND ITERATION
 let string1 = "aabBcde";
 
 function countDuplicates1(str){
-        
+        let result = '';
+        let duplicates = [];
+
+        str.split('').forEach((char, index, array) => {
+                if(array.includes(char)){
+                        duplicates.push(char)
+                }
+        })
+
+        return duplicates;
 
 }
 
 console.log(countDuplicates1(string1));// 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+//Nope, that will always produce the same string as the starting string because of course the string includes all of the characters that are in it, doesn't check for two instances of those characters
+        //Maybe do need to do 
+        //Just ask for help, hey, you've spent a lot of time on this one, it's okay, you know you've put in effort :) 
+
+
+
+//Got help from ChatGPT, here's a new starting point:
+
+
+//3RD ITERATION
+let string = "aabBcde";
+
+function duplicateCount(text) {
+        const lower = text.toLowerCase();
+        const charCount = {};
+      
+        for (let char of lower) {
+          charCount[char] = (charCount[char] || 0) + 1;
+        }
+      
+        let duplicates = 0;
+        for (let char in charCount) {
+          if (charCount[char] > 1) {
+            duplicates++;
+          }
+        }
+      
+        return duplicates;
+}
+
+console.log(duplicateCount(string));// 2 
+//Success on Codewars - okay, so I was thinking the return had to include that whole sentence, not just the number, so I was way overthinking/over complicating it
 
 
 
@@ -85,11 +125,82 @@ console.log(countDuplicates1(string1));// 2 # 'a' occurs twice and 'b' twice (`b
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Oofff, complcated regex I don't understand. Will have to look up how that one works. 
+    //Okay, not so complicated:
+
+    // .match(/([^])\1+/g)
+    // Uses a regular expression to find repeated characters:
+        // ([^]): Captures any character (using [^] to match any character safely).
+        // \1+: Looks for one or more repetitions of the same character captured.
+    
+    // So this matches groups like:
+    // "aa"
+    // "bbb"
+    // "11"
+    // etc.
+    
+    // || []
+    // If .match(...) returns null (meaning no duplicates found), this falls back to an empty array so we can safely check .length.
+
+    //Using ([^]) instead of (/./) ensures that literally every character is considered, even newline characters.
+
+function duplicateCount(text){
+    return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
+}
 
 
 
 
 
+//This one is more straightforward:
+    // text.toLowerCase()
+            // Converts the input string to all lowercase so comparisons are case-insensitive.
+
+    // .split('')
+            // Turns the string into an array of characters.
+
+    // .filter(function(val, i, arr) { ... })
+            // Loops through each character, checking a condition.
+                    // Inside the filter:
+                    // javascript
+                    // Copy
+                    // Edit
+                    // arr.indexOf(val) !== i && arr.lastIndexOf(val) === i
+                    // This line ensures:
+
+                    // arr.indexOf(val) !== i: This checks if this is not the first occurrence of the character → means it’s a duplicate.
+
+                    // arr.lastIndexOf(val) === i: This checks if this is the last occurrence of the character → ensures we count the duplicate only once.
+
+    // So you're only keeping characters that:
+            // Appear more than once
+            // And you're only keeping their last occurrence
+
+function duplicateCount(text){
+    return text.toLowerCase().split('').filter(function(val, i, arr){
+      return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
+    }).length;
+}
+
+
+
+
+
+
+function duplicateCount(text){
+    var lower = text.toLowerCase();
+    var count = 0;
+    var used = [];
+    
+    lower.split('').forEach(function(letter) {
+      if (!used.includes(letter) && (lower.split(letter).length - 1) > 1) {
+        count++;
+        used.push(letter);
+      }
+    });
+    
+    return count;
+}
 
 
 
