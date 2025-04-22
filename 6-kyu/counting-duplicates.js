@@ -45,7 +45,7 @@
 
 
 //1ST ITERATION
-let string = "aabBcde";
+let string1 = "aabBcde";
 
 function countDuplicates(str){
         let uniqueChars = [...new Set(str.toLowerCase().split(''))];
@@ -58,7 +58,7 @@ function countDuplicates(str){
 
 }
 
-console.log(countDuplicates(string));// returned: "5 #" -> wanted: 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+console.log(countDuplicates(string1));// returned: "5 #" -> wanted: 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
 //What about using brackets to evaluate key at run time? 
 //Or can you get the element out of the array and use that element to count instances in the other array and add that all to the return string at the same time?
 //OOOHHH! We're looking for duplicates, not unique characters, got to start over with the pseudo code because you were trying to do the wrong thing (-: 
@@ -68,7 +68,7 @@ console.log(countDuplicates(string));// returned: "5 #" -> wanted: 2 # 'a' occur
 // 2 - could use a loop and .includes to find duplicates, has to include the character
 
 //2ND ITERATION
-let string1 = "aabBcde";
+let string2 = "aabBcde";
 
 function countDuplicates1(str){
         let result = '';
@@ -84,7 +84,7 @@ function countDuplicates1(str){
 
 }
 
-console.log(countDuplicates1(string1));// 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+console.log(countDuplicates1(string2));// 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
 //Nope, that will always produce the same string as the starting string because of course the string includes all of the characters that are in it, doesn't check for two instances of those characters
         //Maybe do need to do 
         //Just ask for help, hey, you've spent a lot of time on this one, it's okay, you know you've put in effort :) 
