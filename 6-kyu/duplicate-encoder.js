@@ -28,12 +28,75 @@
 //P: Psuedo code -> see comments in solution
 
 // 1 - create a function that takes in a string
+        //use .toLowerCase() to convert everything to same type of character
+        //use .split('').sort().join('') to group like characters
+        //
 // 2 - use .replace() with a regex 1+ to check for more than one occurence, and a ternary operator to determine "(" OR ")"
 // 3 - return the value and call the function
 // 4 - not well-thought-out answer, but will need to do some trial and error to get a better idea of what to do
 
+//1ST ITERATION
+
+let string = "recede";
+
+function duplicateEncoder(str){
+        return str.toLowerCase().split('').sort().join('').replace(/([^])\1+/g, )
+}
+
+console.log(duplicateEncoder(string));// returned: cdundefinedr NOT: "()()()"
+//Nope, can't actually sort them because then they won't be in the order of the original word
+        //use a for loop and if/else statements to add characters to a new variable set equal to an empty string
+        //make sure to convert string to all lowercase
+        //can still use .match to determine if a character is repeated, just use i from the for loop as the character to match, not ([^]) any character
 
 
+//2ND ITERATION
+let string1 = "recede";
+
+function duplicateEncoder1(str){
+        let result = '';
+        let newStr = str.toLowerCase();
+        let arr = newStr.split('');
+
+        for(let i = 0; i < arr.length; i++){
+                if(newStr.split('').sort().join('').match(/i\1+/g)){
+                        result += ')';
+                }else{
+                        result += '(';
+                }
+        }
+        return result;
+        
+}
+
+console.log(duplicateEncoder1(string1));// "()()()"
+//Returned: ((((((
+//The idea is getting there, but the if conditional obviously didn't work. It doesn't seem like the "i" is getting selected. Ohh! It's not supposed to be the i, it's supposed to be the arr[i]. I want the element, not the index of the element. Try that and see!
+
+
+//3RD ITERATION
+let string2 = "recede";
+
+function duplicateEncoder2(str){
+        let result = '';
+        let newStr = str.toLowerCase();
+        let arr = newStr.split('');
+
+        for(let i = 0; i < arr.length; i++){
+                if(newStr.split('').sort().join('').match(/${arr[i]}\1+/g)){
+                        result += ')';
+                }else{
+                        result += '(';
+                }
+        }
+        return result;
+        
+}
+
+console.log(duplicateEncoder2(string2));// "()()()"
+//Returned: ((((((
+//Need to figure out how to select the current character from within the .match() function
+//
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
