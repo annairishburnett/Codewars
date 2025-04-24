@@ -145,7 +145,7 @@ console.log(duplicateEncoder4(string4)); // "()()()"
         // str.toLowerCase() — makes the comparison case-insensitive.
         // .split('') — converts the string into an array of characters.
         // .map(...) — checks each character to see if it's unique or a duplicate:
-        // If the first and last index of the character are the same, it's unique → '('.
+                // If the first and last index of the character are the same, it's unique → '('.
         // Otherwise, it appears more than once → ')'.
         // .join('') — converts the array back into a string.
         // This version is clean, expressive, and avoids manual loops.
@@ -156,11 +156,42 @@ console.log(duplicateEncoder4(string4)); // "()()()"
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Uses same basic principles, .toLowerCase(), .split(''), .map() with a function inside using indexOf and lastIndexOf, and then .join('')
+function duplicateEncode(word){
+     return word
+       .toLowerCase()
+       .split('')
+       .map( function (a, i, w) {
+         return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+       })
+       .join('');
+}
 
 
 
+//Same concept but with a for loop and an variable set to an empty string
+function duplicateEncode(word){
+   
+        var unique='';
+        word = word.toLowerCase();
+        for(var i=0; i<word.length; i++){
+            if(word.lastIndexOf(word[i]) == word.indexOf(word[i])){
+                unique += '(';
+            }
+            else{
+                unique += ')';
+            }
+        }
+        return unique;
+}
 
 
+
+//One with .replace()
+function duplicateEncode(word) {
+        word = word.toLowerCase();
+        return word.replace(/./g, m => word.indexOf(m) == word.lastIndexOf(m) ? '(' : ')');
+}
 
 
 
