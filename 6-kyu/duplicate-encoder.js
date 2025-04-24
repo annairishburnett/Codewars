@@ -94,9 +94,63 @@ function duplicateEncoder2(str){
 }
 
 console.log(duplicateEncoder2(string2));// "()()()"
+
 //Returned: ((((((
 //Need to figure out how to select the current character from within the .match() function
-//
+//Googled: how to use a variable in .match
+
+//4TH ITERATION
+let string3 = "recede";
+
+function duplicateEncoder3(str){
+        let result = '';
+        let newStr = str.toLowerCase();
+        let arr = newStr.split('');
+
+        for(let i = 0; i < arr.length; i++){
+
+                let re = new RegExp(String.raw`\\b${arr[i]}1+\\b`, "gi");
+
+                if(newStr.split('').sort().join('').match(re)){
+                        result += ')';
+                }else{
+                        result += '(';
+                }
+        }
+        return result;
+        
+}
+
+console.log(duplicateEncoder3(string3));// "()()()"
+//Returned: ((((((
+//Asking ChatGPT for help:
+
+
+//5TH ITERATION
+let string4 = "recede";
+
+function duplicateEncoder4(str) {
+    let lowerStr = str.toLowerCase();
+    
+    return lowerStr
+        .split('')
+        .map((char, _, arr) =>
+            arr.indexOf(char) === arr.lastIndexOf(char) ? '(' : ')'
+        )
+        .join('');
+}
+
+console.log(duplicateEncoder4(string4)); // "()()()"
+//Explanation:
+        // str.toLowerCase() — makes the comparison case-insensitive.
+        // .split('') — converts the string into an array of characters.
+        // .map(...) — checks each character to see if it's unique or a duplicate:
+        // If the first and last index of the character are the same, it's unique → '('.
+        // Otherwise, it appears more than once → ')'.
+        // .join('') — converts the array back into a string.
+        // This version is clean, expressive, and avoids manual loops.
+
+//Works on Codewars!
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
