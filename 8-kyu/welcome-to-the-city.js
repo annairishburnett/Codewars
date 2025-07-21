@@ -28,8 +28,34 @@
 //5 - result += str1, + ' ' + str2 + '!'
 //6 - return the result and call the function/console log result to test
 
-//1st Iteration
 
+//1st Iteration:
+
+function sayHello(name, city, state){
+    let result = "Hello, ";
+
+    for(let i = 0; i <= name.length - 1; i++){
+        result += name[i];
+        
+        if(name[i] !== name[name.length - 1]){
+            result += ' ';
+        }else{
+            result += "! Welcome to "
+        }
+    }
+
+    result += city 
+    result += ', ' 
+    result += state += '!';
+
+    return result;
+}
+
+console.log(sayHello(['Piyanart', 'Promsawad'], 'Marquette', 'Michigan')); //Hello, Piyanart Promsawad! Welcome to Marquette, Michigan!
+
+//It works and is accepted by Codewars! However this code is ugly and wet, so I will refactor before submitting.
+
+//2nd Iteration:
 
 
 
