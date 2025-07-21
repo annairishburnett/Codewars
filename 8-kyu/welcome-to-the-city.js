@@ -81,17 +81,30 @@ console.log(sayHello(['Piyanart', 'Promsawad'], 'Marquette', 'Michigan')); // He
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Yep, there are way easier answers :-) So obvious now that I see it, hehe. Just use a template string!
+function sayHello(name, city, state) {
+    return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+}
 
 
+//And this one, too. Or use concatenation with .join(' ') with a space in it. I got too in my head about how to work with the name in the form of an array and made it more complicated than necessary. 
+function sayHello( name, city, state ) {
+    return 'Hello, ' + name.join(' ') + '! Welcome to ' + city + ', ' + state + '!';
+}
 
 
+//And this one, same as the first but in an arrow function. 
+const sayHello = ( name, city, state ) => `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
 
 
+//Or this one that creates and fullName variable and then uses a template string
+function sayHello( name, city, state ) {
+    let fullName = name.join(" ");  
+    return `Hello, ${fullName}! Welcome to ${city}, ${state}!`;
+}
 
 
-
-
-
+//And this is why we do codewars, folx! It teaches us to practice solving different problems and shows us other ways of thinking about solving them that we might have overlooked, forgotten, or didn't know about :) 
 
 
 
