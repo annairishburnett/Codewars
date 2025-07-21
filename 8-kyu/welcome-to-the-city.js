@@ -57,8 +57,25 @@ console.log(sayHello(['Piyanart', 'Promsawad'], 'Marquette', 'Michigan')); //Hel
 
 //2nd Iteration:
 
+//Maybe I can use reduce, and have the initial value of reduce be "Hello Name! Welcome to city, state!" But reduce works on arrays, not arrays plus strings, but I could use .replace() instead because that works on strings, and then still use a loop for the name part
 
+function sayHello(name, city, state){
+    let result = "Hello, name! Welcome to city, state!";
+    let fullName = ''
 
+    for(let i = 0; i <= name.length - 1; i++){
+        fullName += name[i]
+        if(name[i] !== name[name.length - 1]){
+            fullName += ' ';
+        }
+    }
+    result = result.replace('name', fullName).replace('city', city).replace('state', state);
+
+    return result;
+}
+
+console.log(sayHello(['Piyanart', 'Promsawad'], 'Marquette', 'Michigan')); // Hello, Piyanart Promsawad! Welcome to Marquette, Michigan!
+//This worked too, and is more elegant. I think there's probably a better solution that I could come up with, and I've already spent enough time on this problem so I'll submit my answer and see what other codewars people came up with to learn from them. 
 
 
 
