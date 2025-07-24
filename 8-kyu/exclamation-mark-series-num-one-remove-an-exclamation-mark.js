@@ -41,7 +41,15 @@ function remove(string){
 //Directions: Remove an exclamation mark from the end of a string
 
 //3rd Iteration
+//use ternary operator ? : and if === .endsWith('!') return string.slice(0,-1) to return entire string but last character
 
+function remove(string){
+    return string.endsWith('!') ? string.slice(0,-1) : string;
+}
+
+console.log(remove(string));// !Hi
+//Worked on VS Code, now test on Codewars
+//It worked! 
 
 
 
