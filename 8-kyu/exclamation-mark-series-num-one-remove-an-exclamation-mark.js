@@ -56,12 +56,28 @@ console.log(remove(string));// !Hi
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Used an arrow function and a $ sign in a regex, which must mean that it selects the character at the end. Look this up!
+const remove = s => s.replace(/!$/, '');
+
+    //What /!$/ means:
+        // ! matches a literal exclamation mark.
+        // $ is an anchor in regular expressions that matches the end of a string.
+
+    // So:
+        // /!$/ matches a single exclamation mark only if it's at the very end of the string.
 
 
 
+//Same as my answer
+function remove(s) {
+  return s.endsWith('!') ? s.slice(0, -1) : s;
+}
 
 
-
+//Uses square brackets to select character at the end of the string and check if it's equal to !, then same as my answer
+function remove(s){
+  return s[s.length - 1] == '!' ? s.slice(0, -1) : s;
+}
 
 
 
