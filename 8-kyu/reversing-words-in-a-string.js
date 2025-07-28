@@ -27,7 +27,11 @@
 //P: Psuedo code -> see comments in solution
 
 
-//1 - 
+//1 - create a function called reverseWords that takes a string as an argument
+//2 - use .split(' ') to separate the words where there are spaces
+//3 - use .reverse() to reverse the words, then .join(' ') to join them back together
+//4 - use .trim() to remove any trailing spaces
+//5 - return the value, call the function, and console.log the result to check if it's correct
 
 
 
