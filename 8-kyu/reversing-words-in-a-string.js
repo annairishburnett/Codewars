@@ -31,16 +31,22 @@
 //2 - use .split(' ') to separate the words where there are spaces
 //3 - use .reverse() to reverse the words, then .join(' ') to join them back together
 //4 - use .trim() to remove any trailing spaces
-//5 - return the value, call the function, and console.log the result to check if it's correct
+//5 - return the value, call the function and pass in an argument, and console.log the result to check if it's correct
+
+//1st Iteration
+let string = "Hi There.";
+
+function reverseWords(str){
+    return str.split(' ').reverse().join(' ').trim();
+}
+
+console.log(reverseWords(string));
+//Success!
 
 
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
-
-
-
-
 
 
 
