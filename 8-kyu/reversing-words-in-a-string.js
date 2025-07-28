@@ -49,7 +49,24 @@ console.log(reverseWords(string));
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Same as mine, but apparently .trim() isn't necessary
+function reverse(string){
+  return string.split(' ').reverse().join(' ');
+}
 
+
+//Arrow function version of above
+reverse = s => s.split(' ').reverse().join(' ')
+
+
+
+//Added validation first
+function reverse(string){
+  // validate input
+  if (typeof(string) !== 'string') throw new Error('reverse: parameter is not a string!');
+  // just use the dumb way out since it's jabbascripps
+  return string.split(' ').reverse().join(' ');
+}
 
 
 
