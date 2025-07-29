@@ -27,7 +27,15 @@
 //3 - use regex /[1234567890]/ and the g global flag to select any character within that set
 //4 - return the new string, call the function, pass in an argument, and console.log the result to check that it's working
 
+//1st Iteration
+let string = 'This looks5 grea8t!';
 
+function stringClean(s){
+    return s.replace(/[1234567890]/g, '');
+}
+
+console.log(stringCleaning(string));
+//Success!
 
 
 
