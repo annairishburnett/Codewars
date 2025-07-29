@@ -35,17 +35,34 @@ function stringClean(s){
 }
 
 console.log(stringCleaning(string));
-//Success!
-
-
+//Success! Let's see if anyone did it more efficiently or cleanly
 
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Yep, they did. Look up what \d means -> I'm infering all number characters. 
+function stringClean(s){
+  return s.replace(/\d/g, "");
+}
+    // In the regular expression /\d/g, the \d matches any digit character, which means any single character from 0 to 9.
+    // Here's a quick breakdown of the pattern:
+    //     \d – matches any digit (equivalent to [0-9])
+    //     g – the global flag, meaning it will replace all digit characters in the string, not just the first one
+
+    //Added \d to Anki and this Kata so I can practice using it
 
 
+
+//Here's another dryer way to do it, brackets with 0-9. Add that to Anki deck, too. 
+function stringClean(s){
+  return s.replace(/[0-9]/g, '');
+}
+
+
+//Arrow function version of the same solution
+const stringClean = s => s.replace( /\d/g, "" ) ;
 
 
 
