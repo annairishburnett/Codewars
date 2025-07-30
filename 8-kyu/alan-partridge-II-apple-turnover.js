@@ -21,7 +21,15 @@
 //3 - return the string, call the function, pass in an argument, and console.log the result to check if it works
 
 
+//1st Iteration
+let number = 10;
 
+function squeezePie(num){
+    return num**2 > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox.";
+}
+
+console.log(squeezePie(number));
+//Success!
 
 
 
