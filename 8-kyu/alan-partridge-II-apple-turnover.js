@@ -34,13 +34,26 @@ console.log(squeezePie(number));
 
 
 
-
-
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Used Math.pow(x,2) instead of x**2
+function apple(x){
+  return Math.pow(x, 2) > 1000 ? 'It\'s hotter than the sun!!' : 'Help yourself to a honeycomb Yorkie for the glovebox.' ;
+}
 
 
+//Used if/else statement instead of ternary operator
+function apple(x){
+  
+  if (Math.pow(x,2) > 1000) {
+    return "It's hotter than the sun!!";
+  } else {
+    return "Help yourself to a honeycomb Yorkie for the glovebox.";
+  
+  }
+
+}
 
 
 
