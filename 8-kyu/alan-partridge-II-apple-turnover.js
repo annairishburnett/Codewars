@@ -1,6 +1,8 @@
 //CODEWARS CODING CHALLENGE DESCRIPTION:
 
+// Your job is simple, if x squared is more than 1000, return It's hotter than the sun!!, else, return Help yourself to a honeycomb Yorkie for the glovebox.
 
+// Note: Input will either be a positive integer (or a string for untyped languages).
 
 
 
@@ -8,11 +10,15 @@
 //MY SOLUTION:
 //Parameters, Return, Examples, Edge Cases, Pseudo Code:
 
-//P: 
-//R: 
-//E: 
-//E: 
-//P: 
+//P: input will be a positive integer, no strings, null/undefined inputs, or other funny business
+//R: if x squared is more than 1000, return It's hotter than the sun!!, else, return Help yourself to a honeycomb Yorkie for the glovebox.
+//E: x = 10 -> 'Help yourself to a honeycomb Yorkie for the glovebox.'
+//E: no edge cases
+//P: Psuedo code -> see comments in solution
+
+//1 - create a function that takes in an integer, parameter is num
+//2 - use a ternary operator and num ** 2 > 1000 to return "It's hotter than the sun!!" or "Help yourself..."
+//3 - return the string, call the function, pass in an argument, and console.log the result to check if it works
 
 
 
