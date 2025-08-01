@@ -32,7 +32,23 @@
 //  - return the value, call the function, pass in an argument, and console.log the result
 
 
+//1st ITERATION
+let input = 3.3;
 
+function dollarCents(num){
+    if(!num.toString().includes('.')){
+        return `$${num}.00`;
+    }else if(num.toString().length === 3){
+        return `$${num}0`;
+    }else{
+        return `$${num}`
+    }
+}
+
+console.log(dollarCents(input));
+//Works for numbers as long as the dollar amount is single digits (so 30.3 wouldn't work because it's three digits long and then you'd only add 0 zero on the end and that's not formatted correctly)
+//I need to rethink this...
+        //
 
 
 
