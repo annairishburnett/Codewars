@@ -48,9 +48,37 @@ function dollarCents(num){
 console.log(dollarCents(input));
 //Works for numbers as long as the dollar amount is single digits (so 30.3 wouldn't work because it's three digits long and then you'd only add 0 zero on the end and that's not formatted correctly)
 //I need to rethink this...
-        //
+        //need to turn it into an array and split it at the period, assign it to a variable const arr = num.toString().split('.')
+        //then if arr.length === 1, use template string to convert to format of $00.00 with dollar sign and adding the period (use ternary operator for if/else)
+        //else, use template string to convert add the dollar sign (already has the period), but then there's the issue of how many digits are after the decimal, 1 or 2?
+        //could just do .padEnd and add 2 zeros and then use .trim(2) to limit to 2 decimals on the end 
 
 
+//2nd ITERATION
+function dollarCents(num){
+    const arr = num.toString().split('.');
+
+    return arr.length === 1 ? `$${arr}.00` : `$${arr.join('')}00`.trim(2);
+}
+//still need to add the period because when you split the string using the period it deletes it
+
+//3rd ITERATION
+function dollarCents(num){
+    const arr = num.toString().split('.');
+
+    return arr.length === 1 ? `$${arr}.00` : `$${arr.join('.')}00`.trim(2);
+}
+//using .trim(2) at the end of a template literal doesn't work
+//try creating a Number() and then triming and and then converting it to a string
+//no, create an array and a split array as consts
+//it's not trim I want, it's .toFixed(2), oops! (facepalm)
+
+//4th ITERATION
+function dollarCents(num){
+    const arr = num.toString().split('.');
+
+    return arr.length === 1 ? `$${arr}.00` : num.toString().padEnd(2,0).toFixed(2);
+}
 
 
 
