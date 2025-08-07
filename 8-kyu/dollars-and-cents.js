@@ -104,11 +104,11 @@ function dollarCents(num){
 //6th Iteration
 let input = 301;
 
-function dollarCents(num){
-    const arr = num.toString().split('');
+function formatMoney(amount){
+    const arr = amount.toString().split('');
     let result = '';
 
-    arr.includes('.') ? result = `${num}00` : result = `${num}.00`
+    arr.includes('.') ? result = `${amount}00` : result = `${amount}.00`
 
     return `$${Number(result).toFixed(2)}`
 }
@@ -118,7 +118,35 @@ console.log(dollarCents(input));
 //I'm sure there's a more elegant way to code this, and I've spent enough time on this problem
 //Time to learn from other coders and their solutions :-) 
 
+
+
+
+
+
+
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
 
+//Yep... definitely made it more complicated than necessary. Seems to be a trend these days with the 8-kyus :)
+//Forgot that .toFixed(2) will add two zeros if the number isn't a decimal already (facepalm)
 
+function formatMoney(amount){
+  return '$' + amount.toFixed(2);
+}
+
+
+//This solution is also elegant: Arrow function with a ternary operator and .toFixed(2)
+let formatMoney = (amount) => `$${amount.toFixed(2)}`
+
+
+
+//This one is interesting... More complex but following number formatting standards
+function formatMoney(amount){
+    const usd = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        useGrouping: false
+    });
+    return usd.format(amount);
+}
