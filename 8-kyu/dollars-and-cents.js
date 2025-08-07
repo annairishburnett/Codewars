@@ -80,7 +80,43 @@ function dollarCents(num){
     return arr.length === 1 ? `$${arr}.00` : num.toString().padEnd(2,0).toFixed(2);
 }
 
+//5th Iteration
+function dollarCents(num){
+    const arr = num.toString().split('');
+    const split = num.toString().split('.');
+    let result = '';
+    //iff num has a decimal results in two parts, 30 and 1
+    //iff num has no decimal results in one part, 301
+    if(arr.includes('.')){
+        result = (num + '00')
+    }else{
+        result = (num + '.' + '00')
+    }
 
+
+    return `$${Number(result).toFixed(2)}`
+}
+
+//Okay, this works in VS Code with numbers with more than one digit before the decimal, any number of numbers after the decimal, and no decimal 
+//Now time to refactor with a ternary operator and delete the const split, not necessary, and use template literals
+
+
+//6th Iteration
+let input = 301;
+
+function dollarCents(num){
+    const arr = num.toString().split('');
+    let result = '';
+
+    arr.includes('.') ? result = `${num}00` : result = `${num}.00`
+
+    return `$${Number(result).toFixed(2)}`
+}
+
+console.log(dollarCents(input));
+//Success!
+//I'm sure there's a more elegant way to code this, and I've spent enough time on this problem
+//Time to learn from other coders and their solutions :-) 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
