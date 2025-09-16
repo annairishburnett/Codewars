@@ -63,13 +63,38 @@ function getDrinkByProfession(param){
 }
 
 console.log(getDrinkByProfession(person)); //Hipster Craft Beer
-
+//Success! 
 
 
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//They used switch cases instead of if/else statements
+function getDrinkByProfession(param) {
+  param = param.toLowerCase();
+  
+  switch(param) {
+    case "jabroni": return "Patron Tequila";
+    case "school counselor": return "Anything with Alcohol";
+    case "programmer": return "Hipster Craft Beer";
+    case "bike gang member": return "Moonshine";
+    case "politician": return	"Your tax dollars";
+    case "rapper": return "Cristal";
+    default: return "Beer";
+  }
+}
 
+//They used an object instead of switch cases or if/else statements
+const drinks = {
+  "jabroni": "Patron Tequila",
+  "school counselor": "Anything with Alcohol",
+  "programmer": "Hipster Craft Beer",
+  "bike gang member": "Moonshine",
+  "politician": "Your tax dollars",
+  "rapper": "Cristal"
+}
+
+const getDrinkByProfession = profession => drinks[profession.toLowerCase()] || "Beer"
 
 
 
