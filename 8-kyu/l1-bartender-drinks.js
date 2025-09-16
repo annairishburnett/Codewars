@@ -38,8 +38,31 @@
 //3 -> use if/else statements and comparison === to check for each possibility in the table, jabroni - rapper and return appropriate output, the else should be "beer"
 //4 -> return the value, call the function, and console.log the result
 
+//1st ITERATION:
 
+const person = "Programmer";
 
+function getDrinkByProfession(param){
+    const profession = param.toLowerCase();
+
+    if(profession === "jabroni"){
+        return "Patron Tequila";
+    }else if(profession === "school counselor"){
+        return "Anything with Alcohol";
+    }else if(profession === "programmer"){
+        return "Hipster Craft Beer";
+    }else if(profession === "bike gang member"){
+        return "Moonshine";
+    }else if(profession === "politician"){
+        return "Your tax dollars";
+    }else if(profession === "rapper"){
+        return "Cristal";
+    }else{
+        return "Beer";
+    }
+}
+
+console.log(getDrinkByProfession(person)); //Hipster Craft Beer
 
 
 
