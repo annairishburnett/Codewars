@@ -27,6 +27,8 @@ function buildString(...template){
 //Failed, spacing was wrong:
     // Return the correct String: expected 'I like Cheese,Milk,Chocolate!' to equal 'I like Cheese, Milk, Chocolate!'
 
+
+//2nd SOLUTION ITERATION
 function buildString(...template){
   return `I like ${template.join(', ')}!`;
 }
@@ -35,7 +37,13 @@ function buildString(...template){
 
 //TOP SOLUTIONS FROM CODEWARS USERS:
 
+//Same answer
+function buildString(...template){
+  return `I like ${template.join(', ')}!`;
+}
 
+//They used an arrow function, otherwise the same answer
+const buildString = (...template) => `I like ${template.join(', ')}!`;
 
 
 
